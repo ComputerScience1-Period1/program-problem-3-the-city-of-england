@@ -20,19 +20,21 @@ void pause() {
 }
 //MAIN
 void main() {
-	int x;
-	cin >> x;
-	int C = x/100;
-	int B = (x%100)/10;
-	int A = (x%10);
-	if (C > B && B > A) {
+	bool cond = true;
+		while (cond) { int var_number;
+	cin >> var_number;
+	int onedigit = var_number/100;
+	int tendigit = (var_number%100)/10;
+	int hundreddigit = (var_number%10);
+	if (onedigit > tendigit && tendigit > hundreddigit) {
 		cout << "Descending";
 	}
-	else if (A > B && B > C) {
+	else if (hundreddigit > tendigit && tendigit > onedigit) {
 		cout << "Ascending";
 	}
 	else {
 		cout << "Neither ascending nor descending";
+	};
 	};
 	
 	pause();
