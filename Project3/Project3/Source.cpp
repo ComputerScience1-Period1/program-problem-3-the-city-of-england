@@ -20,20 +20,29 @@ void pause() {
 }
 //MAIN
 void main() {
-	int x;
-	cin >> x;
-	int C = x/100;
-	int B = (x%100)/10;
-	int A = (x%10);
-	if (C > B && B > A) {
-		cout << "Descending";
+	int i = 0;
+	while (i<30) {    //ask for number and check it 30 times
+		i = i + 1;
+
+		//declare variables
+		int number;
+		cin >> number;    //ask for three digit number
+		int C = number / 100;     //hundreds digit
+		int B = (number % 100) / 10;    //tens digit
+		int A = (number % 10);   //ones digit
+
+		if (C > B && B > A) {          //check number if descending
+			cout << "Descending \n";
+		}
+		else if (A > B && B > C) {    //check number if ascending
+			cout << "Ascending \n";
+		}
+		else {
+			cout << "Neither \n";
+		}
+
 	}
-	else if (A > B && B > C) {
-		cout << "Ascending";
-	}
-	else {
-		cout << "Neither ascending nor descending";
-	};
-	
 	pause();
+
+
 }
